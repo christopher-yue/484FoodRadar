@@ -1,7 +1,7 @@
 # 484FoodRadar
 
 ### Goal of Project
-Create a web application using the MERN stack that allows people to view restaurants based on rating, type of cuisine, and distance
+Create a web application using the MERN stack that allows people to view restaurants based on rating, type of cuisine, and distance and make reservations
 
 ### SETUP:
 
