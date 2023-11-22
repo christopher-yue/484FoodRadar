@@ -1,6 +1,9 @@
 # 484FoodRadar
 
-## SETUP:
+### Goal of Project
+Create a web application using the MERN stack that allows people to view restaurants based on rating, type of cuisine, and distance
+
+### SETUP:
 
 Clone the repository
 Make sure you have the node package manager installed in your computer for this to work.
@@ -10,7 +13,7 @@ Keep both terminals open
 On the backend folder create a new folder named vars and inside the folder create a new file named .env (We'll be using the .env file for the development process).
 Enter .env variables
 
-## RUNNING AND TESTING:
+### RUNNING AND TESTING:
 
 Once that is all done, go back to your backend terminal and type npm run server
 Next, go to your frontend terminal and type npm start
