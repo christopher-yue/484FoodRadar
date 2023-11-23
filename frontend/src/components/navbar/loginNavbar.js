@@ -1,0 +1,20 @@
+import { Link } from "react-router-dom";
+import "./loginNavbar.css";
+
+export const LoginNavbar = () => {
+  return (
+    <header>
+      <ul class="navmenu">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/signup">Signup</Link>
+        </li>
+      </ul>
+    </header>
+  );
+};

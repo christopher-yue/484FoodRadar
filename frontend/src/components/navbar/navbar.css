@@ -1,11 +1,12 @@
-/* Navbar.css */
-
-header {
-  background-color: rgba(0, 0, 0, 0.7);
+.navbar {
+  background-color: #333;
+  color: white;
   padding: 10px;
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .navmenu {
@@ -13,24 +14,15 @@ header {
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: space-around;
 }
 
 .navmenu li {
-  margin-right: 20px;
+  display: inline-block;
 }
 
-.navmenu li:last-child {
-  margin-right: 0;
-}
-
-.navmenu a {
+.navmenu li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.navmenu a:hover {
-  color: #ffd700;
 }

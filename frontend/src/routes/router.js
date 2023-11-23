@@ -6,6 +6,7 @@ import { IndexView } from "../views/index/indexView";
 import { SignupView } from "../views/signup/signupView";
 import { HomeView } from "../views/home/homeView";
 import { AuthContext } from "../components/context/authContext";
+import { RestaurantSearch } from "../views/restaurantSearch/restaurantSearch";
 
 export const AppRoutes = () => {
   const { user } = useContext(AuthContext);
@@ -28,6 +29,7 @@ export const AppRoutes = () => {
             <Route path="/login" element={<LoginView />} />
             <Route path="/signup" element={<SignupView />} />
             <Route path="/home" element={<Navigate to="/login" />} />
+            <Route path="/restaurantsearch" element={<RestaurantSearch />} />
             <Route path="*" element={<Navigate to="/" />} />
           </>
         )}

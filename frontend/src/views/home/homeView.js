@@ -1,25 +1,18 @@
 // frontend/src/views/home/homeView.js
 
-import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import LogoutButton from "../../components/buttons/logout/logoutButton";
-import { AuthContext } from "../../components/context/authContext";
+import React from "react";
 import { Navbar } from "../../components/navbar/navbar";
+import { Footer } from "../../components/footer/footer";
+import "./homeView.css";
 
 export const HomeView = () => {
-  const { logout } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await logout();
-    navigate("/login");
-  };
-
   return (
     <div>
       <Navbar />
-      <h1>Home Page</h1>
-      <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+      <div className="home">
+        <h1>Home Page</h1>
+      </div>
+      <Footer />
     </div>
   );
 };
