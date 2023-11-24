@@ -5,7 +5,7 @@ export const RestaurantSearch = () => {
   return (
     <div>
       <Navbar />
-      <h1>Index</h1>
+      <h1>Restaurant Search</h1>
     </div>
   );
 };

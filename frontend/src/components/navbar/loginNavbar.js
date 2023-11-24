@@ -4,7 +4,7 @@ import "./loginNavbar.css";
 export const LoginNavbar = () => {
   return (
     <header>
-      <ul class="navmenu">
+      <ul className="navmenu">
         <li>
           <Link to="/">Home</Link>
         </li>

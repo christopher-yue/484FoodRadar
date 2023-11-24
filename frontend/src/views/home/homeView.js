@@ -4,13 +4,14 @@ import React from "react";
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from "../../components/footer/footer";
 import "./homeView.css";
+import GooglePlaces from "../../components/googlePlaces/googlePlaces";
 
 export const HomeView = () => {
   return (
     <div>
       <Navbar />
       <div className="home">
-        <h1>Home Page</h1>
+        <GooglePlaces />
       </div>
       <Footer />
     </div>
