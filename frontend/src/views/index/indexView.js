@@ -1,6 +1,6 @@
 import React from "react";
 import { LoginNavbar } from "../../components/navbar/loginNavbar";
-import { Footer } from "../../components/footer/footer";
+import { LoginFooter } from "../../components/footer/loginFooter";
 import "./indexView.css";
 import Filter from "../../images/filter.svg";
 import Pin from "../../images/pin.svg";
@@ -45,7 +45,7 @@ export const IndexView = () => {
           </div>
         </section>
       </div>
-      <Footer />
+      <LoginFooter />
     </div>
   );
 };
