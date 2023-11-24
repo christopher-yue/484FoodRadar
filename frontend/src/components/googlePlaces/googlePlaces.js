@@ -27,10 +27,6 @@ const GooglePlaces = () => {
       .catch((error) =>
         console.error("Error loading Google Maps script", error)
       );
-
-    return () => {
-      delete window.initAutocomplete;
-    };
   }, []);
 
   const handleSearch = () => {
