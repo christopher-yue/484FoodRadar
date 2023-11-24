@@ -1,45 +1,41 @@
-// googlePlaces.js
 import React, { useState, useEffect } from "react";
 import "./googlePlaces.css";
+import { loadGoogleMapsScript } from "../../utils/googleMapsScript";
 
 const GooglePlaces = () => {
-  const [autocomplete, setAutocomplete] = useState(null);
   const [places, setPlaces] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [selectedPlace, setSelectedPlace] = useState(null);
 
   useEffect(() => {
-    if (window.googleMapsScriptLoaded) {
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&libraries=places&callback=initAutocomplete`;
-    script.async = true;
-    document.body.appendChild(script);
-
-    window.initAutocomplete = () => {
-      setAutocomplete(
-        new window.google.maps.places.Autocomplete(
-          document.getElementById("autocomplete"),
-          { types: ["geocode"] }
-        )
+    const initAutocomplete = () => {
+      const autocompleteInstance = new window.google.maps.places.Autocomplete(
+        document.getElementById("autocomplete"),
+        { types: ["geocode"] }
       );
+      autocompleteInstance.addListener("place_changed", () => {
+        const place = autocompleteInstance.getPlace();
+        if (place && place.formatted_address) {
+          setInputValue(place.formatted_address);
+          setSelectedPlace(place);
+        }
+      });
     };
 
-    window.googleMapsScriptLoaded = true;
+    loadGoogleMapsScript("initAutocomplete")
+      .then(initAutocomplete)
+      .catch((error) =>
+        console.error("Error loading Google Maps script", error)
+      );
 
     return () => {
-      document.body.removeChild(script);
-      window.googleMapsScriptLoaded = false;
+      delete window.initAutocomplete;
     };
   }, []);
 
   const handleSearch = () => {
-    const place = autocomplete.getPlace();
-    console.log(place);
-
-    if (!place.geometry) {
-      console.log("Returned place contains no geometry");
+    if (!selectedPlace || !selectedPlace.geometry) {
+      console.log("No place selected or place contains no geometry");
       return;
     }
 
@@ -48,7 +44,7 @@ const GooglePlaces = () => {
     );
     service.nearbySearch(
       {
-        location: place.geometry.location,
+        location: selectedPlace.geometry.location,
         radius: "500",
         type: ["restaurant"],
       },
