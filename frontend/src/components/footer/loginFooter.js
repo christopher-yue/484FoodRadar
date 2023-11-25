@@ -3,7 +3,6 @@ import React from "react";
 import "./footer.css";
 
 export const LoginFooter = () => {
-
   return (
     <div className="footer">
       <section className="contact" id="contact">

@@ -10,7 +10,7 @@ export const Navbar = () => {
             <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to="/restaurantsearch">Find Restaurants</Link>
+            <Link to="/managereservation">Manage Reservations</Link>
           </li>
         </ul>
       </header>

@@ -3,7 +3,7 @@ import "./loginNavbar.css";
 
 export const LoginNavbar = () => {
   return (
-    <div className="navbar">
+    <div className="Navbar">
       <header>
         <ul className="navmenu">
           <li>

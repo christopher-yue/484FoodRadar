@@ -4,6 +4,7 @@ import LoginButton from "../../components/buttons/login/loginButton";
 import { AuthContext } from "../../components/context/authContext";
 import { LoginNavbar } from "../../components/navbar/loginNavbar";
 import "./loginView.css";
+import { LoginFooter } from "../../components/footer/loginFooter";
 
 export const LoginView = () => {
   const [email, setEmail] = useState("");
@@ -41,6 +42,7 @@ export const LoginView = () => {
         />
         <LoginButton onClick={handleLogin}>Login</LoginButton>
       </div>
+      <LoginFooter />
     </div>
   );
 };
