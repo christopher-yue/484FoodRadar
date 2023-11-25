@@ -1,9 +1,8 @@
 // frontend/src/models/UserModel.js
 class UserModel {
-    constructor({ _id, firstname, lastname, email, mobile, token }) {
+    constructor({ _id, firstname, email, mobile, token }) {
         this.id = _id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstname = firstname
         this.email = email;
         this.mobile = mobile;
         this.token = token;

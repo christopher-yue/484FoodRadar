@@ -11,28 +11,28 @@ export const IndexView = () => {
     <div className="page">
       <LoginNavbar />
       <div className="head">
-        <div class="logo-container">
-          <img src="logo.png" alt="FoodRadar Logo" class="logo" />
+        <div className="logo-container">
+          <img src="logo.png" alt="FoodRadar Logo" className="logo" />
           <h1>FoodRadar</h1>
         </div>
         <p>Discover the best food options in your area!</p>
       </div>
 
       <div className="main">
-        <section class="hero">
+        <section className="hero">
           <h2>Discover Local Delights</h2>
           <p>
             Explore a world of culinary experiences right in your neighborhood.
             From cozy cafes to gourmet restaurants, FoodRadar helps you find the
             perfect dining spot.
           </p>
-          <a href="/signup" class="cta-button">
+          <a href="/signup" className="cta-button">
             Get Started
           </a>
         </section>
 
-        <section class="features">
-          <div class="feature">
+        <section className="features">
+          <div className="feature">
             <img src={Filter} alt="Filter Icon" />
             <h3>Smart Filters</h3>
             <p>
@@ -42,7 +42,7 @@ export const IndexView = () => {
             </p>
           </div>
 
-          <div class="feature">
+          <div className="feature">
             <img src={Pin} alt="Location Icon" />
             <h3>Location-Based Search</h3>
             <p>
@@ -51,7 +51,7 @@ export const IndexView = () => {
             </p>
           </div>
 
-          <div class="feature">
+          <div className="feature">
             <img src={Calendar} alt="Calendar Icon" />
             <h3>Table Booking</h3>
             <p>
