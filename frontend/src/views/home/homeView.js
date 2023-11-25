@@ -4,7 +4,7 @@ import React from "react";
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from "../../components/footer/footer";
 import "./homeView.css";
-import GooglePlaces from "../../components/googlePlaces/googlePlaces";
+import GooglePlaces from "../../components/google/googlePlaces";
 
 export const HomeView = () => {
   return (
