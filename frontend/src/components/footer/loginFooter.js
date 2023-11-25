@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import "./footer.css";
+import "./loginFooter.css";
 
 export const LoginFooter = () => {
   return (
-    <div className="footer">
+    <div className="loginFooter">
       <section className="contact" id="contact">
         <div className="contact-info">
           <div className="first-info">
