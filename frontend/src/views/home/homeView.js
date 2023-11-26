@@ -11,8 +11,7 @@ export const HomeView = () => {
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    // const userId = Cookies.get('refreshToken');
-    const userId = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NWQ3MGUzNDczOWNlZDJlZmE4ZjhkOCIsImlhdCI6MTcwMTAxNjU5NSwiZXhwIjoxNzAxMTAyOTk1fQ.IJcF1AxRHBgQ1Mo2VqQP5153Nt0W_EXgSnOM1yZ8MrU';
+    const userId = Cookies.get('refreshToken');
 
     if (userId) {
       // Fetch user information from the backend using the retrieved user ID
