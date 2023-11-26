@@ -22,3 +22,33 @@ header {
   text-decoration: none;
   font-weight: bold;
 }
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navmenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navmenu li {
+  display: inline-block;
+}
+
+.navmenu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+

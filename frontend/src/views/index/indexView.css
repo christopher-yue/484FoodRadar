@@ -14,8 +14,8 @@ img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 1em;
-  padding: 1em;
+  /* margin: 1em;
+  padding: 1em; */
   font-family: "Arial", sans-serif;
   color: #333;
   position: relative;

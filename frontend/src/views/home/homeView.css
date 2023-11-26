@@ -5,6 +5,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url("../../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .home {
@@ -13,4 +17,67 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 80px; /* Adjust this margin based on your navbar height */
+}
+
+
+.welcome-section {
+  background-color: #333; /* Set the desired background color */
+  padding-top: 100px;
+  text-align: center;
+  color: #fff;
+}
+
+/* .welcome-section {
+  background-color: rgba(255, 255, 255, 0.8); // Set the desired background color with opacity 
+  padding: 40px;
+  text-align: center;
+} */
+
+.location-search-section {
+  background-color: rgba(255, 255, 255, 0.8); /* Set the desired background color with opacity */
+  text-align: center;
+  padding: 75px;
+}
+
+.location-search-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.location-search-section p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+#locationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#locationInput {
+  width: 300px;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
 }
