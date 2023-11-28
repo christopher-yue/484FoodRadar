@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginNavbar } from "../../components/navbar/loginNavbar";
+import { Navbar } from "../../components/navbar/navbar";
 import { LoginFooter } from "../../components/footer/loginFooter";
 import "./indexView.css";
 import Filter from "../../images/filter.svg";
@@ -9,7 +9,7 @@ import Calendar from "../../images/calendar.svg";
 export const IndexView = () => {
   return (
     <div className="page">
-      <LoginNavbar />
+      <Navbar />
       <div className="head">
         <div className="logo-container">
           <img src="logo.png" alt="FoodRadar Logo" className="logo" />

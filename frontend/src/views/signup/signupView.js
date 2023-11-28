@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userController from "../../controllers/userController";
-import { LoginNavbar } from "../../components/navbar/loginNavbar";
+import { Navbar } from "../../components/navbar/navbar";
 import "./signupView.css";
 
 export const SignupView = () => {
@@ -32,7 +32,7 @@ export const SignupView = () => {
 
   return (
     <div>
-      <LoginNavbar />
+      <Navbar />
       <div className="signup-container">
         <h1>Signup</h1>
         <form onSubmit={handleSubmit} className="signup-form">

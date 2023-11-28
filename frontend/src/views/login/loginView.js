@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../../components/buttons/login/loginButton";
 import { AuthContext } from "../../components/context/authContext";
-import { LoginNavbar } from "../../components/navbar/loginNavbar";
+import { Navbar } from "../../components/navbar/navbar";
 import "./loginView.css";
 import { LoginFooter } from "../../components/footer/loginFooter";
 
@@ -23,7 +23,7 @@ export const LoginView = () => {
 
   return (
     <div>
-      <LoginNavbar />
+      <Navbar />
       <div className="login-container">
         <h1 className="login-title">Login</h1>
         <input
