@@ -1,4 +1,4 @@
-/* reservationView.css */
+reservationView.css
 
 /* Style for the table content */
 .tablecontent {
@@ -41,4 +41,27 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+main.profile-page {
+  padding: 40px;
+}
+
+section.user-info {
+  margin-bottom: 40px;
+}
+
+.user-details {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details p {
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 24px;
 }
