@@ -1,22 +1,22 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const dbConnect = require("./config/dbConnect");
-const { notFound, errorHandler } = require('./middlewares/errorHandler');
+const { notFound, errorHandler } = require("./middlewares/errorHandler");
 const app = express();
-const dotenv = require('dotenv').config({path: "./vars/.env"});
+const dotenv = require("dotenv").config({ path: "./vars/.env" });
 
 const PORT = process.env.PORT || 4000;
 const userRouter = require("./routes/userRoutes");
-const googleRouter = require("./routes/googleAPIRoutes")
+const googleRouter = require("./routes/googleAPIRoutes");
 
 dbConnect();
 
 const corsOptions = {
-    origin: 'http://localhost:3000', // This should match the domain of your frontend application
-    credentials: true, // This is important to allow sending and receiving cookies
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: ["http://localhost:3000", "https://foodradar.onrender.com"], // This should match the domain of your frontend application
+  credentials: true, // This is important to allow sending and receiving cookies
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
 app.use(cors(corsOptions));
@@ -32,5 +32,5 @@ app.use(notFound);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-    console.log(`Listening on PORT ${PORT}`);
+  console.log(`Listening on PORT ${PORT}`);
 });
