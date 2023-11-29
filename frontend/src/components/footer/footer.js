@@ -26,10 +26,7 @@ export const Footer = () => {
           <div className="second-info">
             <h4>User</h4>
             <p>
-              <Link to="/profile">Profile</Link>
-            </p>
-            <p>
-              <Link to="/managereservation">Reservations</Link>
+              <Link to="/managereservation">Profile/Reservations</Link>
             </p>
           </div>
 

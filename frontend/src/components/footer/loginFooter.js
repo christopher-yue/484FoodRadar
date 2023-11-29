@@ -15,17 +15,14 @@ export const LoginFooter = () => {
           <div className="second-info">
             <h4>User</h4>
             <p>
-              <Link to="/profile">Profile</Link>
-            </p>
-            <p>
-              <Link to="/managereservation">Reservations</Link>
+              <Link to="/managereservation">Profile/Reservations</Link>
             </p>
           </div>
 
           <div className="third-info">
             <h4>Explore</h4>
             <p>
-              <Link to="/searchrestaurant">Explore Restaurants</Link>
+              <Link to="/home">Explore Restaurants</Link>
             </p>
           </div>
 
