@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiURL = "https://foodradarbackend.onrender.com";
+const apiUrl = "https://foodradarbackend.onrender.com";
 
 const fetchPlaces = async (placeId) => {
   try {
