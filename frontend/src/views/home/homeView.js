@@ -5,9 +5,7 @@ import { Footer } from "../../components/footer/footer";
 import "./homeView.css";
 import GooglePlaces from "../../components/google/googlePlaces";
 
-
 export const HomeView = () => {
-  
   const name = JSON.parse(localStorage.getItem("user")).firstname;
 
   return (
@@ -15,7 +13,10 @@ export const HomeView = () => {
       <Navbar />
       <div className="welcome-section">
         <h2>Welcome to FoodRadar {name}!</h2>
-        <p>Explore a variety of restaurants and dishes near you. Find your next delicious meal with FoodRadar.</p>
+        <p>
+          Explore a variety of restaurants and dishes near you. Find your next
+          delicious meal with FoodRadar.
+        </p>
       </div>
       <div className="location-search-section">
         <h2>Discover the Best Food Near You</h2>

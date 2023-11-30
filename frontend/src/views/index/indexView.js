@@ -5,6 +5,7 @@ import "./indexView.css";
 import Filter from "../../images/filter.svg";
 import Pin from "../../images/pin.svg";
 import Calendar from "../../images/calendar.svg";
+import logo from "../../images/transparentwhite.png";
 
 export const IndexView = () => {
   return (
@@ -12,8 +13,7 @@ export const IndexView = () => {
       <Navbar />
       <div className="head">
         <div className="logo-container">
-          <img src="logo.png" alt="FoodRadar Logo" className="logo" />
-          <h1>FoodRadar</h1>
+          <img src={logo} alt="FoodRadar Logo" className="logo" />
         </div>
         <p>Discover the best food options in your area!</p>
       </div>
