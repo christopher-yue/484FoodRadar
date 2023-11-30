@@ -1,12 +1,12 @@
-// frontend/src/views/NoPage/noPageView.js
-import React, { useContext } from "react";
+import { LoginFooter } from "../../components/footer/loginFooter";
+import { Navbar } from "../../components/navbar/navbar";
 
-export default function noPageView() {
-  return(
-    <>
-    
-    <React />
-    <h2>ERROR 404: NOT FOUND</h2>    
-    </>
-  )
-}
+export const NoPage = () => {
+  return (
+    <div className="page">
+      <Navbar />
+      <h1>404 Page Not Found</h1>
+      <LoginFooter />
+    </div>
+  );
+};
