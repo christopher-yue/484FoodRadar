@@ -14,7 +14,7 @@ const googleRouter = require("./routes/googleAPIRoutes");
 dbConnect();
 
 const corsOptions = {
-  origin: "http://localhost:3000", // This should match the domain of your frontend application
+  origin: ["http://localhost:3000", "https://foodradar.onrender.com"], // This should match the domain of your frontend application
   credentials: true, // This is important to allow sending and receiving cookies
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };

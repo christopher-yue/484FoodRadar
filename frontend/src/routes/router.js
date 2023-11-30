@@ -36,7 +36,7 @@ export const AppRoutes = () => {
             <Route path="/signup" element={<SignupView />} />
             <Route path="/home" element={<Navigate to="/login" />} />
 
-            <Route path="*" element={<Navigate to="/NoPage" />} />
+            <Route path="*" element={<NoPage />} />
           </>
         )}
       </Routes>

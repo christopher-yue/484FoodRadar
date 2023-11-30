@@ -40,7 +40,6 @@ export const Navbar = () => {
                         // Menu for logged in users
                         <>
                             <li><Link to="/home" onClick={toggleMenu}>Home</Link></li>
-                            <li><Link to="/profile" onClick={toggleMenu}>Profile</Link></li>
                             <li><Link to="/managereservation" onClick={toggleMenu}>Profile/Manage Reservations</Link></li>
                             <li><LogoutButton onClick={handleLogout}>Log Out</LogoutButton></li>
                         </>
