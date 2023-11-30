@@ -20,7 +20,7 @@ export const AppRoutes = () => {
       <Routes>
         {user ? (
           <>
-            <Route path="/" element={<HomeView />} />
+            <Route path="/home" element={<HomeView />} />
             <Route path="/managereservation" element={<ReservationView />} />
             <Route path="/login" element={<Navigate to="/home" />} />
             <Route path="/signup" element={<Navigate to="/home" />} />
