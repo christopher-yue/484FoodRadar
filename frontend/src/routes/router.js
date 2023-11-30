@@ -8,7 +8,7 @@ import { HomeView } from "../views/home/homeView";
 import { AuthContext } from "../components/context/authContext";
 import { ReservationView } from "../views/reservations/reservationView";
 import { PlaceDetails } from "../views/place/placeDetails";
-import { noPageView } from "../views/NoPage/noPageView";
+import { NoPage } from "../views/NoPage/noPageView";
 //import { RestaurantSearch } from "../views/restaurantSearch/restaurantSearch";
 
 export const AppRoutes = () => {
@@ -24,7 +24,7 @@ export const AppRoutes = () => {
             <Route path="/login" element={<Navigate to="/home" />} />
             <Route path="/signup" element={<Navigate to="/home" />} />
             <Route path="/place/:placeId" element={<PlaceDetails />} />
-            <Route path="/404" element={<noPageView />}/>
+            <Route path="/404" element={<NoPage />}/>
             {/* add more routes here if needed */}
             <Route path="*" element={<Navigate to="/404" />} />{" "}
             {/* catch all routes that are not defined above */}
