@@ -11,7 +11,7 @@ export const Footer = () => {
 
   const handleLogout = async () => {
     await logout();
-    navigate("/login");
+    navigate("/auth");
   };
 
   return (

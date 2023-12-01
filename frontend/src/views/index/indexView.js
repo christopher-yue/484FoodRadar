@@ -26,7 +26,7 @@ export const IndexView = () => {
             From cozy cafes to gourmet restaurants, FoodRadar helps you find the
             perfect dining spot.
           </p>
-          <a href="/signup" className="cta-button">
+          <a href="/auth" className="cta-button">
             Get Started
           </a>
         </section>

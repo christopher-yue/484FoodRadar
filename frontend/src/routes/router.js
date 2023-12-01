@@ -32,6 +32,7 @@ export const AppRoutes = () => {
             <Route path="/" element={<IndexView />} />
             <Route path="/home" element={<Navigate to="/auth" />} />
             <Route path="/auth" element={<AuthView />} />
+            <Route path="/managereservation" element={<Navigate to="/auth" />} />
             <Route path="*" element={<NoPage />} />
           </>
         )}
