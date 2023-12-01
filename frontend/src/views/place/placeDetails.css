@@ -1,8 +1,7 @@
 .place-details-container {
     text-align: center;
     margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
+    max-width: 100%;
 }
 
 .place-details-container h1 {
@@ -16,6 +15,10 @@
     gap: 10px;
     margin-bottom: 20px;
 }
+.data{
+    width: 400px;
+    margin-left: 550px;
+  }
 
 .photos-container img {
     width: 100%;
@@ -32,8 +35,19 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .add-reservation-btn:hover {
     background-color: #45a049;
+}#autocomplete ::placeholder{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.numPeople{
+    text-align: center;
+    font-weight: bolder;
+    color:black;
 }

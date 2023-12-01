@@ -15,25 +15,25 @@ export const Footer = () => {
   };
 
   return (
-    <div className="footer">
+    <div>
       <section className="contact" id="contact">
         <div className="contact-info">
           <div className="first-info">
-            <h1>FoodRadar</h1>
-            <p>(123)-456-7890</p>
-            <p>support@foodradar.com</p>
+            <h1 style={{color:"white"}}>FoodRadar</h1>
+            <p style={{color:"white",textAlign:"center"}}>(123)-456-7890</p>
+            <p style={{color:"white",textAlign:"center"}}>support@foodradar.com</p>
           </div>
           <div className="second-info">
             <h4>User</h4>
             <p>
-              <Link to="/managereservation">Profile/Reservations</Link>
+              <Link to="/managereservation" style={{color:"white"}}>Profile/Reservations</Link>
             </p>
           </div>
 
           <div className="third-info">
             <h4>Explore</h4>
             <p>
-              <Link to="/searchrestaurant">Explore Restaurants</Link>
+              <Link to="/searchrestaurant"style={{color:"white"}}>Explore Restaurants</Link>
             </p>
           </div>
 
@@ -43,10 +43,8 @@ export const Footer = () => {
           </div>
         </div>
       </section>
-
-      <div className="end-text">
-        <p>Copyright @2023. All Rights Reserved. Designed by FoodRadar.</p>
-      </div>
+      <p style={{color:"white",backgroundColor:"#4a4e69",textAlign:"center"}}>Copyright @2023. All Rights Reserved. Designed by FoodRadar.</p>
     </div>
+    
   );
 };

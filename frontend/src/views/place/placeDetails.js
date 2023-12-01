@@ -17,13 +17,19 @@ export const PlaceDetails = () => {
     return (
         <div className="place-details-container">
             <Navbar />
-            <h1>{place.name}</h1>
+            <h1 style={{marginTop:"20px"}}>{place.name}</h1>
             <div className="photos-container">
                 {place.photoUrls && place.photoUrls.map((url, index) => (
                     <img key={index} src={url} alt={place.name} />
                 ))}
             </div>
-            <div>
+            <div className="data">
+                <h1>Table Reservation</h1>
+                <input
+                className='numPeople'
+                type='text'
+                placeholder='Number of People'
+                />
                 <input
                 className='date'
                 type='date'
@@ -33,11 +39,6 @@ export const PlaceDetails = () => {
                 className='time'
                 type='time'
                 placeholder='Time'
-                />
-                <input
-                className='numPeople'
-                type='text'
-                placeholder='Number of People'
                 />
             </div>
             <button className="add-reservation-btn">Add to Reservations</button>

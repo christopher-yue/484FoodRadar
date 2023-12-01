@@ -45,16 +45,17 @@ const GooglePlaces = () => {
 
     return (
         <div className="google-container">
-            <h1>Nearby Restaurants Finder</h1>
+            <h1 style={{marginTop:"20px",fontSize:"31px"}}>Search Restaurants</h1>
             <div className="search-bar-container">
                 <input
+                    style={{textAlign:"center",fontWeight:"bolder",fontSize:"18px"}}
                     type="text"
                     id="autocomplete"
-                    placeholder="Enter location"
+                    placeholder="Enter The Geographic Location"
                     value={inputValue}
                     onChange={handleInputChange}
                 />
-                <button onClick={handleSearch}>Search</button>
+                <button id="btn" style={{fontSize:"18px"}} onClick={handleSearch}>Search</button>
                 {autocompleteSuggestions.length > 0 && (
                     <div className="autocomplete-dropdown">
                         {autocompleteSuggestions.map((suggestion, index) => (
@@ -72,12 +73,12 @@ const GooglePlaces = () => {
             <div className="output-grid">
                 {places.map((place, index) => (
                     <div key={index} className="output-item" onClick={() => handlePlaceClick(place)}>
-                        <p>{place.name}</p>
                         {place.photoUrls && place.photoUrls.length > 0 ? (
                             <img src={place.photoUrls[0]} alt={place.name} />
                         ) : (
                             <img src="https://via.placeholder.com/100" alt="Placeholder" />
                         )}
+                        <p>{place.name}</p>
                     </div>
                 ))}
             </div>
