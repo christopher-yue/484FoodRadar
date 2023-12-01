@@ -9,7 +9,7 @@
 }
 
 .user-details p {
-  margin: 10px 0;;
+  margin: 10px 0;
 }
 
 /* Styles for the tablecontent section */
@@ -32,11 +32,14 @@ table {
   margin-bottom: 20px;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #ddd;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
 }
@@ -48,7 +51,7 @@ input {
   margin-bottom: 10px;
 }
 
-button {
+.tablecontent button {
   background-color: #4caf50;
   color: #fff;
   padding: 10px 20px;
@@ -58,7 +61,7 @@ button {
   font-size: 16px;
 }
 
-button:hover {
+.tablecontent button:hover {
   background-color: #45a049;
 }
 
