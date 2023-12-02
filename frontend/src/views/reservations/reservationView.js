@@ -1,14 +1,45 @@
-import React from "react";
+
+import React, { useContext } from "react";
 import "./reservationView.css";
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from "../../components/footer/footer";
+import UserController from "../../controllers/userController";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../components/context/authContext";
 
 export const ReservationView = () => {
+  const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  const fname = JSON.parse(localStorage.getItem("user")).firstname;
-  const lname = JSON.parse(localStorage.getItem("user")).lastname;
-  const email = JSON.parse(localStorage.getItem("user")).email;
-  const mobile = JSON.parse(localStorage.getItem("user")).mobile;
+  const handleEditUser = () => {
+    // You can navigate to the edit page or perform other edit actions here
+navigate("/edituser")
+  };
+
+
+const handleDeleteUser = async () => {
+  console.log("Deleting user with ID:", user.id);
+  const confirmDelete = window.confirm("Are you sure you want to delete?");
+  if (confirmDelete) {
+      try {
+          const deleteResult = await UserController.delete(user.id);
+
+          if (deleteResult.success) {
+              alert("User deleted successfully");
+              await logout();
+              localStorage.removeItem("user");
+              navigate("/auth");
+          } else {
+              console.error("Delete user error:", deleteResult.message);
+              alert(`Error: ${deleteResult.message}`);
+          }
+      } catch (error) {
+          console.error("Delete user error:", error);
+          alert("An unexpected error occurred during delete");
+      }
+  }
+};
 
   return (
     <div>
@@ -16,51 +47,24 @@ export const ReservationView = () => {
       <section className="user-info">
         <h2>User Profile</h2>
         <div className="user-details">
-          <p><strong>First Name:</strong> {fname}</p>
-          <p><strong>Last Name:</strong> {lname}</p>
-          <p><strong>Email:</strong> {email}</p>
-          <p><strong>Phone:</strong> {mobile}</p>
+          <p>
+            <strong>First Name:</strong> {user.firstname}
+          </p>
+          <p>
+            <strong>Last Name:</strong> {user.lastname}
+          </p>
+          <p>
+            <strong>Email:</strong> {user.email}
+          </p>
+          <p>
+            <strong>Phone:</strong> {user.mobile}
+          </p>
+          <button onClick={handleEditUser}>Edit</button>
+          <button onClick={handleDeleteUser}>Delete</button>
         </div>
       </section>
-      <div className="tablecontent">
-        <h2>Manage Reservations</h2>
-
-        <table>
-          <tr>
-            <th>Restaurant Name</th>
-            <th>Location</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Number of People</th>
-            <th>Update Reservation</th>
-            <th>Remove Reservation</th>
-          </tr>
-          <tr>
-            <td>
-              <input type="text" />
-            </td>
-            <td>
-              <input type="text" />
-            </td>
-            <td>
-              <input type="text" />
-            </td>
-            <td>
-              <input type="text" />
-            </td>
-            <td>
-              <input type="text" />
-            </td>
-            <td>
-              <button type="submit">Update</button>
-            </td>
-            <td>
-              <button type="submit">Update</button>
-            </td>
-          </tr>
-        </table>
-      </div>
       <Footer />
     </div>
   );
 };
+

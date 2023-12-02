@@ -8,6 +8,7 @@ import { AuthContext } from "../components/context/authContext";
 import { ReservationView } from "../views/reservations/reservationView";
 import { PlaceDetails } from "../views/place/placeDetails";
 import { NoPage } from "../views/NoPage/noPageView";
+import {EditUser} from "../views/reservations/editUser"
 
 export const AppRoutes = () => {
   const { user } = useContext(AuthContext);
@@ -20,6 +21,9 @@ export const AppRoutes = () => {
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<HomeView />} />
             <Route path="/managereservation" element={<ReservationView />} />
+            <Route path="/edituser" element={<EditUser/>} />
+            <Route path="/editprofile" element={<ReservationView />} />
+            
             <Route path="/auth" element={<Navigate to="/home" />} />
             <Route path="/place/:placeId" element={<PlaceDetails />} />
             <Route path="/404" element={<NoPage />} />

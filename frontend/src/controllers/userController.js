@@ -30,6 +30,18 @@ const UserController = {
       return { success: false, message: error.response.data };
     }
   },
+  delete: async (userId) => {
+    try {
+      const response = await axios.delete(`${apiURL}/api/user/${userId}`, {
+        withCredentials: true,
+      });
+      return { success: true, data: response.data };
+    } catch (error) {
+      console.error("Delete user error:", error);
+      return { success: false, message: "An error occurred during delete" };
+    }
+  },
+  
   // add more methods here if needed
 };
 
