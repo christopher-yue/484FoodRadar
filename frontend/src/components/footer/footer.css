@@ -11,15 +11,17 @@
   font-size: 48px;
   color: red;
   font-style: normal;
+  margin-bottom: 15px;
 }
 .contact-info h4{
   color: #212529;
+  
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 .contact-info p{
-  color:#565656;
+  color:white;
   font-size:14px;
   font-weight:400;
   text-transform: capitalize;
@@ -32,7 +34,7 @@
   color:#EE1C47;
 }
 .second-info a{
-  color:#565656;
+  color:white;
   font-size:14px;
   font-weight:400;
   text-transform: capitalize;
@@ -45,7 +47,7 @@
   color:#EE1C47;
 }
 .third-info a{
-  color:#565656;
+  color:white;
   font-size:14px;
   font-weight:400;
   text-transform: capitalize;
