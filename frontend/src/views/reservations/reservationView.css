@@ -1,73 +1,48 @@
-/* Apply styles only to the user-info section and its children */
 .user-info {
   margin-bottom: 40px;
-  background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   padding-top: 75px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .user-details p {
   margin: 10px 0;
 }
 
-/* Styles for the tablecontent section */
-.tablecontent {
+.user-reservation {
   margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.tablecontent h2 {
+.user-reservation h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-table,
-th,
-td {
+.reservation-details {
+  flex: 0 0 48%;
   border: 1px solid #ddd;
-}
-
-th,
-td {
+  border-radius: 8px;
   padding: 15px;
-  text-align: left;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.tablecontent button {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
+.reservation-details p {
+  margin: 0;
 }
 
-.tablecontent button:hover {
-  background-color: #45a049;
-}
-
-/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-  .tablecontent {
-    overflow-x: auto;
+  .user-reservation {
+    flex-direction: column;
+    align-items: center;
   }
 }

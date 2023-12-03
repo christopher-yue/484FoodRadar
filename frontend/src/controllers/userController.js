@@ -9,8 +9,10 @@ const UserController = {
       { email, password },
       { withCredentials: true }
     );
+    console.log("frontend userController login " + JSON.stringify(response)) //test
     return response;
   },
+
   logout: async () => {
     try {
       await axios.get(`${apiURL}/api/user/logout`, { withCredentials: true });
@@ -32,16 +34,31 @@ const UserController = {
   },
   delete: async (userId) => {
     try {
-      const response = await axios.delete(`${apiURL}/api/user/${userId}`, {
-        withCredentials: true,
-      });
+      const response = await axios.delete(
+        `${apiURL}/api/user/${userId}`,
+         { withCredentials: true,}
+         );
       return { success: true, data: response.data };
     } catch (error) {
       console.error("Delete user error:", error);
       return { success: false, message: "An error occurred during delete" };
     }
   },
-  
+  editUser: async (userId, updatedUserData) => {
+    try {
+      const response = await axios.put(
+        `${apiURL}/api/user/edit-user/${userId}`,
+        updatedUserData,
+        { withCredentials: true }
+      );
+
+      return { success: true, data: response.data };
+    } catch (error) {
+      console.error("Edit user error:", error);
+      return { success: false, message: "An error occurred during edit" };
+    }
+  },
+
   // add more methods here if needed
 };
 
