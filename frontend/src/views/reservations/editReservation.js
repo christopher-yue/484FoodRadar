@@ -1,19 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from "../../components/footer/footer";
 import UserController from "../../controllers/userController";
 import { AuthContext } from "../../components/context/authContext";
-import "./editUser.css";
 
-export const EditUser = () => {
+export const EditReservation = () => {
   const { user, setUser } = useContext(AuthContext);
-  const userinfo = JSON.parse(localStorage.getItem("user"));
+  const reservations = JSON.parse(localStorage.getItem("user.reservations[]"));
 
   const [userData, setUserData] = useState({
-    firstname: userinfo.firstname,
-    lastname: userinfo.lastname,
-    email: userinfo.email,
-    mobile: userinfo.mobile,
+    restaurant: reservations.restaurant,
+    location: reservations.location,
+    time: reservations.time,
+    date: reservations.date,
+    numPeople: reservations.numPeople,
   });
 
   const [loading, setLoading] = useState(false);
@@ -32,7 +32,7 @@ export const EditUser = () => {
       if (editResult.success) {
         setUser(editResult.data);
         localStorage.setItem("user", JSON.stringify(editResult.data));
-        alert("User updated successfully");
+        alert("Profile updated successfully");
       } else {
         console.error("Edit user error:", editResult.message);
         alert(`Error: ${editResult.message}`);
@@ -49,37 +49,35 @@ export const EditUser = () => {
     <div>
       <Navbar />
       <form onSubmit={handleSubmit}>
-        <h2>Editing profile</h2>
-        <label>First name:</label>
+        <h2>Edit</h2>
         <input
           type="text"
-          id="firstname"
-          name="firstname"
-          value={userData.firstname}
+          name="restaurant"
+          value={userData.restaurant}
           onChange={handleInputChange}
         />
-        <label>Last name:</label>
         <input
           type="text"
-          id="lastname"
-          name="lastname"
-          value={userData.lastname}
+          name="location"
+          value={userData.location}
           onChange={handleInputChange}
         />
-        <label>Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={userData.email}
-          onChange={handleInputChange}
-        />
-        <label>Mobile:</label>
         <input
           type="text"
-          id="mobile"
-          name="mobile"
-          value={userData.mobile}
+          name="time"
+          value={userData.time}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          name="date"
+          value={userData.date}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          name="number of people"
+          value={userData.numPeople}
           onChange={handleInputChange}
         />
 

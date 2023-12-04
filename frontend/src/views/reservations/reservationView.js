@@ -1,4 +1,3 @@
-
 import React, { useContext } from "react";
 import "./reservationView.css";
 import { Navbar } from "../../components/navbar/navbar";
@@ -13,33 +12,31 @@ export const ReservationView = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const handleEditUser = () => {
-    // You can navigate to the edit page or perform other edit actions here
-navigate("/edituser")
+    navigate("/edituser");
   };
 
-
-const handleDeleteUser = async () => {
-  console.log("Deleting user with ID:", user.id);
-  const confirmDelete = window.confirm("Are you sure you want to delete?");
-  if (confirmDelete) {
+  const handleDeleteUser = async () => {
+    console.log("Deleting user with ID:", user.id);
+    const confirmDelete = window.confirm("Are you sure you want to delete?");
+    if (confirmDelete) {
       try {
-          const deleteResult = await UserController.delete(user.id);
+        const deleteResult = await UserController.delete(user.id);
 
-          if (deleteResult.success) {
-              alert("User deleted successfully");
-              await logout();
-              localStorage.removeItem("user");
-              navigate("/auth");
-          } else {
-              console.error("Delete user error:", deleteResult.message);
-              alert(`Error: ${deleteResult.message}`);
-          }
+        if (deleteResult.success) {
+          alert("User deleted successfully");
+          await logout();
+          localStorage.removeItem("user");
+          navigate("/auth");
+        } else {
+          console.error("Delete user error:", deleteResult.message);
+          alert(`Error: ${deleteResult.message}`);
+        }
       } catch (error) {
-          console.error("Delete user error:", error);
-          alert("An unexpected error occurred during delete");
+        console.error("Delete user error:", error);
+        alert("An unexpected error occurred during delete");
       }
-  }
-};
+    }
+  };
 
   return (
     <div>
@@ -63,8 +60,35 @@ const handleDeleteUser = async () => {
           <button onClick={handleDeleteUser}>Delete</button>
         </div>
       </section>
+
+      <section className="user-info">
+        <h2>Reservations</h2>
+        {user.reservations && user.reservations.length > 0 ? (
+          user.reservations.map((reservation, index) => (
+            <div key={index} className="reservation-details">
+              <p>
+                <strong>Restaurant:</strong> {reservation.restaurant}
+              </p>
+              <p>
+                <strong>Location:</strong> {reservation.location}
+              </p>
+              <p>
+                <strong>Date:</strong> {reservation.date}
+              </p>
+              <p>
+                <strong>Time:</strong> {reservation.time}
+              </p>
+              <p>
+                <strong>Number of People:</strong> {reservation.numPeople}
+              </p>
+            </div>
+          ))
+        ) : (
+          <p>No reservations found.</p>
+        )}
+      </section>
+
       <Footer />
     </div>
   );
 };
-
