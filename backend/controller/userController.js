@@ -47,7 +47,6 @@ const loginUser = asyncHandler(async (req, res) => {
       mobile: findUser?.mobile,
       token: generateToken(findUser?._id),
       reservations: findUser?.reservations,
-      password: findUser?.password, //test
     };
     res.json(userData);
   } else {
@@ -112,8 +111,6 @@ const updateUser = asyncHandler(async (req, res) => {
         lastname: req?.body?.lastname,
         email: req?.body?.email,
         mobile: req?.body?.mobile,
-        reservations: req?.body?.reservations,
-        password: req?.body?.password,
       },
       {
         new: true,

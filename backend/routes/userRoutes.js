@@ -25,7 +25,7 @@ router.get("/:id", authMiddleware, isAdmin, getUser);
 
 router.delete("/:id", deleteUser);
 
-router.put("/edit-user?:id", authMiddleware, updateUser);
+router.put("/edit-user/:id", authMiddleware, updateUser);
 router.put("/block-user/:id", authMiddleware, isAdmin, blockUser);
 router.put("/unblock-user/:id", authMiddleware, isAdmin, unblockUser);
 router.put("/password", authMiddleware, updatePassword);
