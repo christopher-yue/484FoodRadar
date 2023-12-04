@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const savedUser = localStorage.getItem("user");
-    console.log("authcontext useEffect " + JSON.stringify(savedUser)); //test
     if (savedUser) {
       setUser(JSON.parse(savedUser));
     }
@@ -23,9 +22,6 @@ export const AuthProvider = ({ children }) => {
 
       localStorage.setItem("user", JSON.stringify(newUser));
       localStorage.setItem("token", newUser.token);
-      //console.log("frontend authcontext login response " + JSON.stringify(response)); //test
-
-      console.log("frontend authcontext login " + JSON.stringify(newUser)); //test
     } catch (error) {
       console.error("Login failed:", error);
     }

@@ -16,7 +16,7 @@ export const EditUser = () => {
     mobile: userinfo.mobile,
   });
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); //boolean on button
 
   const handleInputChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -27,8 +27,12 @@ export const EditUser = () => {
     setLoading(true);
 
     try {
-      const editResult = await UserController.editUser(user.id, userData);
-
+      const editResult = await UserController.editUser(
+        userinfo.id,
+        JSON.stringify(userData)
+      );
+      console.log("tests2 editresult " + userinfo.id); //test
+      console.log("tests2 editresult " + userData.firstname); //test
       if (editResult.success) {
         setUser(editResult.data);
         localStorage.setItem("user", JSON.stringify(editResult.data));

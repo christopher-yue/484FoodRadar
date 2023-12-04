@@ -17,7 +17,6 @@ class UserModel {
     this.mobile = mobile;
     this.token = token;
     this.reservations = reservations || [];
-    this.password = password; //test
   }
 }
 
