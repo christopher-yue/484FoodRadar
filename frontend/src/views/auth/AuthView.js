@@ -7,9 +7,7 @@ export const KeyEnter = ({ children }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
-    console.log("Form submitted");
     setSubmitted(true);
-    window.alert("Form Submitted!");
   };
 
   useEffect(() => {
