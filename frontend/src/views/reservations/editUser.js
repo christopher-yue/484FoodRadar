@@ -52,8 +52,8 @@ export const EditUser = () => {
   return (
     <div>
       <Navbar />
-      <form onSubmit={handleSubmit}>
-        <h2>Editing profile</h2>
+      <form style={{marginTop:"20px",marginBottom:"20px"}}onSubmit={handleSubmit}>
+        <h2>Hi, {userData.firstname} Update Your Profile Information</h2>
         <label>First name:</label>
         <input
           type="text"
@@ -87,7 +87,7 @@ export const EditUser = () => {
           onChange={handleInputChange}
         />
 
-        <button type="submit" disabled={loading}>
+        <button style={{marginLeft:"220px",marginTop:"20px"}} type="submit" disabled={loading}>
           {loading ? "Updating..." : "Finish Edit"}
         </button>
       </form>

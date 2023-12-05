@@ -1,6 +1,11 @@
+.full__Page{
+  background-image: url(./background.jpg);
+  height:100%;
+  width:100%;
+}
 .error{
   font-size: 150px;
-  margin-bottom: 150px;
+ 
 }
 .erNo,.noT{
  color: red;

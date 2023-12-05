@@ -12,6 +12,7 @@ export const AuthView = () => {
 
   let togglePanel = move ? " right-panel-active" : "";
   return (
+    <div>
     <div className="auth-container">
       <div className={`container${togglePanel}`} id="container">
         <Register />
@@ -33,6 +34,7 @@ export const AuthView = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

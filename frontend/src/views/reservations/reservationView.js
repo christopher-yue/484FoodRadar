@@ -56,8 +56,9 @@ export const ReservationView = () => {
           <p>
             <strong>Phone:</strong> {user.mobile}
           </p>
-          <button onClick={handleEditUser}>Edit</button>
-          <button onClick={handleDeleteUser}>Delete</button>
+          <button style={{marginTop:"20px"}} onClick={handleEditUser}>Edit Profile Information</button>
+          <br></br>
+          <button style={{marginTop:"20px"}} onClick={handleDeleteUser}>Delete User</button>
         </div>
       </section>
 

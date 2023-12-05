@@ -20,8 +20,8 @@ export const Footer = () => {
         <div className="contact-info">
           <div className="first-info">
             <h1 style={{color:"white"}}>FoodRadar</h1>
-            <p style={{color:"white",textAlign:"center"}}>(123)-456-7890</p>
-            <p style={{color:"white",textAlign:"center"}}>support@foodradar.com</p>
+            <p style={{color:"white"}}>(123)-456-7890</p>
+            <p style={{color:"white"}}>support@foodradar.com</p>
           </div>
           <div className="second-info">
             <h4>User</h4>

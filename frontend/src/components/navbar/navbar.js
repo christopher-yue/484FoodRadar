@@ -50,6 +50,11 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/aboutview" onClick={toggleMenu}>
+                  About Us
+                </Link>
+              </li>
+              <li>
                 <LogoutButton onClick={handleLogout}>Log Out</LogoutButton>
               </li>
             </>
