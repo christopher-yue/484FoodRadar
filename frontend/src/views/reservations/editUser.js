@@ -1,12 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from "../../components/footer/footer";
 import UserController from "../../controllers/userController";
-import { AuthContext } from "../../components/context/authContext";
 import "./editUser.css";
+import { useNavigate } from "react-router-dom";
+import UserModel from "../../models/userModel";
 
 export const EditUser = () => {
-  const { user, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const userinfo = JSON.parse(localStorage.getItem("user"));
 
   const [userData, setUserData] = useState({
@@ -29,13 +30,15 @@ export const EditUser = () => {
     try {
       const editResult = await UserController.editUser(
         userinfo.id,
-        JSON.stringify(userData)
+        userinfo.token,
+        userData
       );
-      console.log("tests2 editresult " + userinfo.id); //test
-      console.log("tests2 editresult " + userData.firstname); //test
+
       if (editResult.success) {
-        setUser(editResult.data);
-        localStorage.setItem("user", JSON.stringify(editResult.data));
+        navigate("/editprofile");
+        const newUser = new UserModel(editResult.data);
+        localStorage.setItem("user", JSON.stringify(newUser));
+        localStorage.setItem("token", JSON.stringify(newUser.refreshToken));
         alert("User updated successfully");
       } else {
         console.error("Edit user error:", editResult.message);
@@ -52,7 +55,10 @@ export const EditUser = () => {
   return (
     <div>
       <Navbar />
-      <form style={{marginTop:"20px",marginBottom:"20px"}}onSubmit={handleSubmit}>
+      <form
+        style={{ marginTop: "20px", marginBottom: "20px" }}
+        onSubmit={handleSubmit}
+      >
         <h2>Hi, {userData.firstname} Update Your Profile Information</h2>
         <label>First name:</label>
         <input
@@ -87,7 +93,11 @@ export const EditUser = () => {
           onChange={handleInputChange}
         />
 
-        <button style={{marginLeft:"220px",marginTop:"20px"}} type="submit" disabled={loading}>
+        <button
+          style={{ marginLeft: "220px", marginTop: "20px" }}
+          type="submit"
+          disabled={loading}
+        >
           {loading ? "Updating..." : "Finish Edit"}
         </button>
       </form>

@@ -43,21 +43,24 @@ const UserController = {
       return { success: false, message: "An error occurred during delete" };
     }
   },
-  editUser: async (userId, updatedUserData) => {
+  editUser: async (userId, authToken, updatedUserData) => {
     try {
       const response = await axios.put(
-        `${apiURL}/api/user/edit-user/${userId}`,
+        `${apiURL}/api/user/edit-user?_id=${userId}`,
         updatedUserData,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
       );
-
       return { success: true, data: response.data };
     } catch (error) {
       console.error("Edit user error:", error);
       return { success: false, message: "An error occurred during edit" };
     }
   },
-
   // add more methods here if needed
 };
 

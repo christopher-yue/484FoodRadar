@@ -8,14 +8,15 @@ class UserModel {
     mobile,
     token,
     reservations,
-    password,
+    refreshToken,
   }) {
     this.id = _id;
     this.firstname = firstname;
     this.lastname = lastname;
     this.email = email;
     this.mobile = mobile;
-    this.token = token;
+    this.token = token || refreshToken;
+    this.refreshToken = refreshToken || null;
     this.reservations = reservations || [];
   }
 }
