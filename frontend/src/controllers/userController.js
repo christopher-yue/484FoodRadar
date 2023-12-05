@@ -1,4 +1,5 @@
 import axios from "axios";
+import UserModel from "../models/userModel";
 
 const apiURL = "https://foodradarbackend.onrender.com";
 
@@ -43,15 +44,22 @@ const UserController = {
       return { success: false, message: "An error occurred during delete" };
     }
   },
-  editUser: async (userId, updatedUserData) => {
+  editUser: async (userId, authToken, updatedUserData) => {
     try {
       const response = await axios.put(
-        `${apiURL}/api/user/edit-user/${userId}`,
+        `${apiURL}/api/user/edit-user?_id=${userId}`,
         updatedUserData,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
       );
-
-      return { success: true, data: response.data };
+      const newUser = new UserModel(response.data);
+      localStorage.setItem("user", JSON.stringify(newUser.data));
+      localStorage.setItem("token", newUser.refreshToken);
+      return { success: true, data: JSON.stringify(newUser.data) };
     } catch (error) {
       console.error("Edit user error:", error);
       return { success: false, message: "An error occurred during edit" };

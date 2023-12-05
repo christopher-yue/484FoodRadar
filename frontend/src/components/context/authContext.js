@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
       const user = await UserController.login(email, password);
       const newUser = new UserModel(user.data);
       setUser(newUser);
-
+      console.log(newUser);
       localStorage.setItem("user", JSON.stringify(newUser));
       localStorage.setItem("token", newUser.token);
     } catch (error) {

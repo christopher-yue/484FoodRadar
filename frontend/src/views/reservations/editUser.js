@@ -27,15 +27,20 @@ export const EditUser = () => {
     setLoading(true);
 
     try {
+      console.log(
+        JSON.stringify(userinfo.token) + " ---------- " + userinfo.id
+      );
       const editResult = await UserController.editUser(
         userinfo.id,
-        JSON.stringify(userData)
+        userinfo.token,
+        userData // Remove JSON.stringify
       );
-      console.log("tests2 editresult " + userinfo.id); //test
-      console.log("tests2 editresult " + userData.firstname); //test
+
       if (editResult.success) {
         setUser(editResult.data);
-        localStorage.setItem("user", JSON.stringify(editResult.data));
+        console.log("test edit" + editResult.data); //test
+        console.log("test user" + user.data); //test
+        // localStorage.setItem("user", JSON.stringify(editResult.data));//to update localstorage
         alert("User updated successfully");
       } else {
         console.error("Edit user error:", editResult.message);
