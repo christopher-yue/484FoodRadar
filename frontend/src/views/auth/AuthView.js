@@ -14,9 +14,7 @@ export const KeyEnter = ({ children }) => {
 
   useEffect(() => {
     const keyDownHandler = (event) => {
-      console.log("User pressed " + event.key);
-
-      if (event.key === 'Enter') {
+      if (event.key === "Enter") {
         event.preventDefault();
         if (!submitted) {
           handleSubmit();
@@ -24,10 +22,10 @@ export const KeyEnter = ({ children }) => {
       }
     };
 
-    document.addEventListener('keydown', keyDownHandler);
+    document.addEventListener("keydown", keyDownHandler);
 
     return () => {
-      document.removeEventListener('keydown', keyDownHandler);
+      document.removeEventListener("keydown", keyDownHandler);
     };
   }, [submitted]);
 
@@ -44,34 +42,34 @@ export const AuthView = () => {
   let togglePanel = move ? " right-panel-active" : "";
   return (
     <div>
-    <div className="auth-container">
-      <div className={`container${togglePanel}`} id="container">
-        <Register />
-        <Login />
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <h2>Already have an account?</h2>
+      <div className="auth-container">
+        <div className={`container${togglePanel}`} id="container">
+          <Register />
+          <Login />
+          <div className="overlay-container">
+            <div className="overlay">
+              <div className="overlay-panel overlay-left">
+                <h2>Already have an account?</h2>
 
-              <KeyEnter>
-              <button className="ghost" onClick={handleMove} id="signIn">
-                Sign In
-              </button>
-              </KeyEnter>
-            </div>
-            <div className="overlay-panel overlay-right">
-              <h2>Don't have an account?</h2>
-              
-              <KeyEnter>
-              <button className="ghost" onClick={handleMove}id="signUp">
-                Sign Up
-              </button>
-              </KeyEnter>
+                <KeyEnter>
+                  <button className="ghost" onClick={handleMove} id="signIn">
+                    Sign In
+                  </button>
+                </KeyEnter>
+              </div>
+              <div className="overlay-panel overlay-right">
+                <h2>Don't have an account?</h2>
+
+                <KeyEnter>
+                  <button className="ghost" onClick={handleMove} id="signUp">
+                    Sign Up
+                  </button>
+                </KeyEnter>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
